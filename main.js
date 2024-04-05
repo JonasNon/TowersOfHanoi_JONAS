@@ -40,16 +40,15 @@ const movePiece = (startStack, endStack) => {
 
 
 //gets the value of the last element of the array the user chose
-//and the last element of the targeted array
+// and the last element of the targeted array
 const isLegal = (startStack, endStack) => {
   // Your code here
   let firstNum = stacks[startStack][stacks[startStack].length - 1]
-  console.log()
   let secondNum = stacks[endStack][stacks[endStack].length - 1]
   // if (secondNum == undefined) {
   //   secondNum = 0
   // }
-  if (firstNum < secondNum) {
+  if (firstNum > secondNum) {
     return false
   } else {
     return true
