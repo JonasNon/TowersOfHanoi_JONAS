@@ -31,29 +31,45 @@
   z-index: 10;
 }
 
+#main {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
 [data-color] {
   width: 25px;
   float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 [data-color="blue"] {
   height: 33px;
   background-color: blue;
+  height: 30px;
+
 }
 
 [data-color="green"] {
   height: 33px;
   background-color: green;
+  height: 40px;
+
 }
 
 [data-color="red"] {
   height: 33px;
   background-color: red;
+  height: 55px;
+
 }
 
 [data-color="yellow"] {
   height: 33px;
   background-color: yellow;
+  height: 70px;
 }
 
 #announce-game-won {

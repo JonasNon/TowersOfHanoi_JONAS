@@ -30,26 +30,51 @@ const printStacks = () => {
 }
 
 // Next, what do you think this function should do?
-const movePiece = () => {
+const movePiece = (startStack, endStack) => {
   // Your code here
+  let pickedUp = stacks[startStack].pop()
+  stacks[endStack].push(pickedUp)
 
 }
 
-// Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
-const isLegal = () => {
+
+
+//gets the value of the last element of the array the user chose
+//and the last element of the targeted array
+const isLegal = (startStack, endStack) => {
   // Your code here
+  let firstNum = stacks[startStack][stacks[startStack].length - 1]
+  console.log()
+  let secondNum = stacks[endStack][stacks[endStack].length - 1]
+  // if (secondNum == undefined) {
+  //   secondNum = 0
+  // }
+  if (firstNum < secondNum) {
+    return false
+  } else {
+    return true
+  }
 
 }
 
-// What is a win in Towers of Hanoi? When should this function run?
+
+//if only the center stack is not empty, declare the player a win
 const checkForWin = () => {
-  // Your code here
-
+  if (stacks["a"].length == 0 && stacks["c"].length == 0) {
+    return true
+  } else {
+    return false
+  }
 }
 
-// When is this function called? What should it do with its argument?
+
+//runs the main logic for the game, start to finish
 const towersOfHanoi = (startStack, endStack) => {
-  // Your code here
+  if (isLegal(startStack, endStack) == true) {
+    movePiece(startStack, endStack)
+    checkForWin()
+  }
+  
 
 }
 
